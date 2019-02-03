@@ -1,0 +1,131 @@
+object FormAbout: TFormAbout
+  Left = 1100
+  Height = 666
+  Top = 836
+  Width = 775
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'About'
+  ClientHeight = 666
+  ClientWidth = 775
+  DesignTimePPI = 192
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object PanelInfo: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 136
+    Top = 0
+    Width = 775
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BevelOuter = bvNone
+    ChildSizing.LeftRightSpacing = 10
+    ChildSizing.TopBottomSpacing = 10
+    ChildSizing.VerticalSpacing = 10
+    ClientHeight = 136
+    ClientWidth = 775
+    TabOrder = 0
+    object LabelAppName: TLabel
+      AnchorSideLeft.Control = PanelInfo
+      AnchorSideTop.Control = PanelInfo
+      Left = 10
+      Height = 32
+      Top = 10
+      Width = 163
+      Caption = 'LabelAppName'
+      ParentColor = False
+    end
+    object LabelVersion: TLabel
+      AnchorSideLeft.Control = PanelInfo
+      AnchorSideTop.Control = LabelAppName
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 32
+      Top = 52
+      Width = 139
+      Caption = 'Version: 1.0.0'
+      ParentColor = False
+    end
+    object LabelAuthor: TLabel
+      AnchorSideLeft.Control = PanelInfo
+      AnchorSideTop.Control = LabelVersion
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 32
+      Top = 94
+      Width = 128
+      Caption = 'Noah Wood'
+      ParentColor = False
+    end
+    object LabelWebsite: TLabel
+      AnchorSideTop.Control = LabelAuthor
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = PanelInfo
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 597
+      Height = 32
+      Top = 94
+      Width = 168
+      Anchors = [akTop, akRight]
+      Caption = 'www.noahw.org'
+      Font.Color = clBlue
+      Font.Style = [fsUnderline]
+      ParentColor = False
+      ParentFont = False
+      OnClick = LabelWebsiteClick
+    end
+  end
+  object Memo1: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PanelInfo
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel
+    Left = 10
+    Height = 440
+    Top = 146
+    Width = 755
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    Lines.Strings = (
+      'Copyright 2019 Noah Wood'
+      ''
+      'Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:'
+      ''
+      'The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.'
+      ''
+      'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.'
+      ''
+      'Some icons provided by FatCow Hosting (https://www.fatcow.com/free-icons)'
+    )
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+  object ButtonPanel: TButtonPanel
+    Left = 12
+    Height = 56
+    Top = 598
+    Width = 751
+    BorderSpacing.Around = 12
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.OnClick = CloseButtonClick
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 2
+    DefaultButton = pbClose
+    ShowButtons = [pbClose]
+  end
+end
